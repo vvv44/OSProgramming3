@@ -8,7 +8,7 @@
 #include <time.h>
 #include <unistd.h>
 #include <fcntl.h>
-#include "student_prime.h"
+#include "vvargas_prime.h"
 
 #define BUFFER_SIZE	1000000
 
