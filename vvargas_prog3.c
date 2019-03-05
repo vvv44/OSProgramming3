@@ -11,7 +11,7 @@
 #include "vvargas_prime.h"
 
 #define BUFFER_SIZE	1000000
-
+//s
 unsigned char buffer[BUFFER_SIZE+1];
 unsigned char fileName[100];
 FILE *primeFile;
