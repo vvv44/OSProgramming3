@@ -1,5 +1,5 @@
 all: vvargas_prime.o vvargas_prog3.o
-	gcc vvargas_prime.o vvargas_prog3.o -pthread -o program
+	gcc vvargas_prime.o vvargas_prog3.o -pthread -lm -o program
 
 # Complete this rule
 vvargas_prog3.o: vvargas_prime.o vvargas_prog3.c
