@@ -72,10 +72,18 @@ void *mini_shell(void *param)
 	pthread_exit(0);
 
 }
-
+/*For this we will do a simple primality test, divide by all numbers from 2 to Sqrt of the given number
+if any give an integer result, we declare it as non prime.*/
 int test_prime(int n)
 {
-
-    return 0;
-
+	//first get squared root
+	double rootDoub = sqrt((double) n);
+	int rootInt = rootDoub;
+	//now perform check
+	for(int i = 2; i<= rootInt ; i++){
+		if(n%rootInt == 0)
+			return 0;
+	}
+	printf("Number is prime");
+    return 1;
 }
