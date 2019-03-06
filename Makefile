@@ -1,6 +1,6 @@
 # Complete this rule
 vvargas_prog3: vvargas_prime.o vvargas_prog3.c
-	gcc ???
+	gcc vvargas_prime.o -o program
 
 # Replace with correct file names
 vvargas_prime.o: vvargas_prime.c vvargas_prime.h
