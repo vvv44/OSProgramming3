@@ -9,6 +9,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include "vvargas_prime.h"
+#include <math.h> //for square root function
 
 /* Global variables that are shared */
 sPRIME_THREAD primeThreadData[MAX_THREADS];
