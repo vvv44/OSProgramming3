@@ -1,6 +1,9 @@
+all: vvargas_prime.o vvargas_prog3.o
+	gcc vvargas_prime.o vvargas_prog3.o -o program
+
 # Complete this rule
 vvargas_prog3.o: vvargas_prime.o vvargas_prog3.c
-	gcc vvargas_prime.o -c vvargas_prog3.c -o program
+	gcc -c vvargas_prog3.c
 
 # Replace with correct file names
 vvargas_prime.o: vvargas_prime.c vvargas_prime.h
