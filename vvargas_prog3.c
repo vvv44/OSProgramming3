@@ -3,6 +3,7 @@
 // Author: ???
 //
 #include <pthread.h>
+#include <stdlib.h>
 #include <stdio.h>
 #include <signal.h>
 #include <time.h>
@@ -36,15 +37,15 @@ int main(int argc, char *argv[])
   /*We need to fill the info for the array of structs*/
   /*First we will get it from the two arguments, argv[1] is the low and argv[2] is the high*/
   /*Right away we can set the low of first thread and high of second and their thread numbers*/
-  primeThreadData[0]->low = atoi(argv[1]);
-  primeThreadData[1]->high = atoi(argv[2]);
-  primeThreadData[0]->num = 1;
-  primeThreadData[1]->num = 2;
+  primeThreadData[0].low = atoi(argv[1]);
+  primeThreadData[1].high = atoi(argv[2]);
+  primeThreadData[0].num = 1;
+  primeThreadData[1].num = 2;
   /*Now we need to compute the missing high and low, to achieve a good balance*/
   //FIXME: We will leave it at 50/50 for now
   range = primeThreadData[1]->high-primeThreadData[0]->low;
-  primeThreadData[0]->high = range/2;
-  primeThreadData[1]->low = range/2+1;
+  primeThreadData[0].high = range/2;
+  primeThreadData[1].low = range/2+1;
 
   /*Create threads that will do the prime search*/
   pthread_create(tid[0],&attr,prime_search,(void *) primeThreadData[0]);//thread 1
