@@ -21,12 +21,12 @@ char *fileName;
 void *prime_search(void *param)
 {
 	/*We will receive an sPRIME_THREAD structure as argument, from there we will get our values*/
-	sprintf(fileName, "primes%d", (sPRIME_THREAD) param->num);	
+	sprintf(fileName, "primes%d", (sPRIME_THREAD *) param->num);	
 
 	/* Create primes output file */
   	primesFile = fopen(fileName,"w");
-	for(int i=param->low;i<=param->high;i++){
-		param->current = i; //we set current number being checked
+	for(int i=(sPRIME_THREAD *)param->low;i<=(sPRIME_THREAD *)param->high;i++){
+		(sPRIME_THREAD *)param->current = i; //we set current number being checked
 		//for each iteration we check if value is prime
 		if(test_prime(i)){
 			fprintf(primesFile,"%d\n",i); //write to file
