@@ -17,11 +17,11 @@ int	numThreads;
 
 /*Declare file names variable*/
 FILE *primesFile; //file to write the primes to
-
+char *fileName;
 void *prime_search(void *param)
 {
 	/*We will receive an sPRIME_THREAD structure as argument, from there we will get our values*/
-	sprintf(fileName, "primes%d", param->num);	
+	sprintf(fileName, "primes%d", (sPRIME_THREAD) param->num);	
 
 	/* Create primes output file */
   	primesFile = fopen(fileName,"w");
