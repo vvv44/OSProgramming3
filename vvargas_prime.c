@@ -16,7 +16,7 @@ sPRIME_THREAD primeThreadData[MAX_THREADS];
 int	numThreads;
 
 /*Declare file names variable*/
-FILE *primesFile //file to write the primes to
+FILE *primesFile; //file to write the primes to
 
 void *prime_search(void *param)
 {
