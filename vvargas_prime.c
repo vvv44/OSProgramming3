@@ -15,11 +15,27 @@
 sPRIME_THREAD primeThreadData[MAX_THREADS];
 int	numThreads;
 
+/*Declare file names variable*/
+FILE *primesFile //file to write the primes to
+
 void *prime_search(void *param)
 {
+	/*We will assume we receive a string as parameter*/
+	int threadNum;
+	int floor; //we assume we have the range somehow
+	int ceiling;
+	sprintf(fileName, "primes%d", threadNum);	
 
+	/* Create primes output file */
+  	primesFile = fopen(fileName,"w");
+	for(int i=floor;i<=ceiling;i++){
+		//for each iteration we check if value is prime
+		if(test_prime(i)){
+			fprintf(primesFile,"%d\n",i); //write to file
+		}
+	}
+	fclose(primesFile);//close the file
 }
-
 void *mini_shell(void *param)
 {
 	int inputSize, i;
@@ -85,6 +101,5 @@ int test_prime(int n)
 		if(n%rootInt == 0)
 			return 0;
 	}
-	printf("Number is prime");
     return 1;
 }

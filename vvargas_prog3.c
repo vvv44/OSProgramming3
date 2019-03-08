@@ -9,6 +9,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include "vvargas_prime.h"
+#include <string.h>
 
 #define BUFFER_SIZE	1000000
 //s
@@ -34,9 +35,19 @@ int main(int argc, char *argv[])
   numThreads = 2;
   
 
+
+  /*Create threads that will do the prime search*/
+  /*For the arguments we will manipulate them, to be only one string (they will be passed when starting the program
+  as ./program arg1 arg2 since it will be a range), so we will append arg2 to arg1 and that pointer will be the parameter*/
+  char* range = strcat(argv[1], argv[2]);
+  pthread_create(tid[0],&attr,prime_search,(void *) range);
+  pthread_create(tid[1],&attr,prime_search,(void *) range);
+
   /* Setup a mini shell thread to provide interactivity with the user */
   pthread_create(&tidshell,&attr,mini_shell,NULL);
   
+
+
 #if 0
 
   /* Create primes output file */
