@@ -20,15 +20,13 @@ FILE *primesFile //file to write the primes to
 
 void *prime_search(void *param)
 {
-	/*We will assume we receive a string as parameter*/
-	int threadNum;
-	int floor; //we assume we have the range somehow
-	int ceiling;
-	sprintf(fileName, "primes%d", threadNum);	
+	/*We will receive an sPRIME_THREAD structure as argument, from there we will get our values*/
+	sprintf(fileName, "primes%d", param->num);	
 
 	/* Create primes output file */
   	primesFile = fopen(fileName,"w");
-	for(int i=floor;i<=ceiling;i++){
+	for(int i=param->low;i<=param->high;i++){
+		param->current = i; //we set current number being checked
 		//for each iteration we check if value is prime
 		if(test_prime(i)){
 			fprintf(primesFile,"%d\n",i); //write to file
