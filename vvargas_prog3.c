@@ -51,10 +51,10 @@ int main(int argc, char *argv[])
   /*Create threads that will do the prime search*/
   pthread_create(&tid[0],&attr,prime_search,&primeThreadData[0]);//thread 1
   pthread_create(&tid[1],&attr,prime_search,&primeThreadData[1]);//thread 2
-  printf("Yoleishon");
+
   /* Setup a mini shell thread to provide interactivity with the user */
   pthread_create(&tidshell,&attr,mini_shell,NULL);
-  
+  printf("Yoleishon");  
 
 
   /* Create primes output file */
