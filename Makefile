@@ -10,4 +10,4 @@ vvargas_prime.o: vvargas_prime.c vvargas_prime.h
 	gcc -c vvargas_prime.c
 
 clean:
-	rm *.o; rm primest primes1 primes2
+	rm *.o; rm primest primes1 primes2 program
