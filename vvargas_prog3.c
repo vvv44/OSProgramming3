@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
   
 
 
-#if 0
+
 
   /* Create primes output file */
   primeFile = fopen("primest","w");
@@ -97,7 +97,7 @@ int main(int argc, char *argv[])
   /* Record execution time */
   after = time(NULL);
   printf("\nPrime search done after %ld seconds\n", after-before);
-#endif
+
 
   sleep(20);
   
