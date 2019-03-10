@@ -48,8 +48,8 @@ int main(int argc, char *argv[])
   primeThreadData[0].high = range/2;
   primeThreadData[1].low = range/2+1;
   /*Create threads that will do the prime search*/
-  pthread_create(&tid[0],NULL,prime_search,&primeThreadData[0]);//thread 1
-  pthread_create(&tid[1],NULL,prime_search,&primeThreadData[1]);//thread 2
+  pthread_create(&tid[0],&attr,prime_search,&primeThreadData[0]);//thread 1
+  //pthread_create(&tid[1],&attr,prime_search,&primeThreadData[1]);//thread 2
 
   /* Setup a mini shell thread to provide interactivity with the user */
   pthread_create(&tidshell,&attr,mini_shell,NULL);
