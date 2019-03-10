@@ -38,12 +38,11 @@ int main(int argc, char *argv[])
   /*We need to fill the info for the array of structs*/
   /*First we will get it from the two arguments, argv[1] is the low and argv[2] is the high*/
   /*Right away we can set the low of first thread and high of second and their thread numbers*/
-  /*
   primeThreadData[0].low = atoi(argv[1]);
   primeThreadData[1].high = atoi(argv[2]);
   primeThreadData[0].num = 1;
   primeThreadData[1].num = 2;
-  */
+  
   printf("Did not get range");
 
   /*Now we need to compute the missing high and low, to achieve a good balance*/
