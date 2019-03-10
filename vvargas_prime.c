@@ -18,15 +18,15 @@ int	numThreads;
 
 /*Declare file names variable*/
 FILE *primesFile; //file to write the primes to
-char fileName[2][10];//two filenames
+char fileNames[2][10];//two filenames
 
 void *prime_search(void *param)
 {
 	
 	/*We will receive an sPRIME_THREAD structure as argument, from there we will get our values*/
-	sprintf(fileName[(((sPRIME_THREAD *)param)->num)-1], "primes%d", ((sPRIME_THREAD *)param)->num);	
+	sprintf(fileNames[(((sPRIME_THREAD *)param)->num)-1], "primes%d", ((sPRIME_THREAD *)param)->num);	
 	/* Create primes output file */
-  	primesFile = fopen(fileName[(((sPRIME_THREAD *)param)->num)-1],"w");
+  	primesFile = fopen(fileNames[(((sPRIME_THREAD *)param)->num)-1],"w");
 	for(int i=((sPRIME_THREAD *)param)->low;i<=((sPRIME_THREAD *)param)->high;i++){
 		((sPRIME_THREAD *)param)->current = i; //we set current number being checked
 		//for each iteration we check if value is prime
