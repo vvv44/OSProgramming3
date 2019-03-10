@@ -97,7 +97,7 @@ int test_prime(int n)
 	int rootInt = rootDoub;
 	//now perform check
 	for(int i = 2; i<= rootInt ; i++){
-		if(n%rootInt == 0)
+		if(n%i == 0)
 			return 0;
 	}
     return 1;
