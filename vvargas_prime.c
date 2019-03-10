@@ -19,9 +19,10 @@ int	numThreads;
 /*Declare file names variable*/
 FILE *primesFile; //file to write the primes to
 char *fileName[2];
-#if 0
+
 void *prime_search(void *param)
 {
+	#if 0
 	/*We will receive an sPRIME_THREAD structure as argument, from there we will get our values*/
 	sprintf(fileName[(((sPRIME_THREAD *)param)->num)-1], "primes%d", ((sPRIME_THREAD *)param)->num);	
 
@@ -35,8 +36,9 @@ void *prime_search(void *param)
 		}
 	}
 	fclose(primesFile);//close the file
+	#endif
 }
-#endif
+
 void *mini_shell(void *param)
 {
 	int inputSize, i;
