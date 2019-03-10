@@ -21,6 +21,7 @@ FILE *primeThreadFile;
 
 int main(int argc, char *argv[])
 {
+    printf("holiwi1");
   int i, bytesRead, bytesWritten;
   pthread_t tid[MAX_THREADS];
   pthread_t tidshell;
@@ -51,11 +52,10 @@ int main(int argc, char *argv[])
   /*Create threads that will do the prime search*/
   //pthread_create(&tid[0],&attr,prime_search,&primeThreadData[0]);//thread 1
   //pthread_create(&tid[1],&attr,prime_search,&primeThreadData[1]);//thread 2
-  printf("holiwi1");
+
   /* Setup a mini shell thread to provide interactivity with the user */
   pthread_create(&tidshell,&attr,mini_shell,NULL);
 
-  printf("holiwi0");
   /* Create primes output file */
   primeFile = fopen("primest","w");
   fclose(primeFile);
