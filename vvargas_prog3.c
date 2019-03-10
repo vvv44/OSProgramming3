@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
 
   /* Setup a mini shell thread to provide interactivity with the user */
   pthread_create(&tidshell,&attr,mini_shell,NULL);
-  
+  printf("yolo");
 
 
   /* Create primes output file */
