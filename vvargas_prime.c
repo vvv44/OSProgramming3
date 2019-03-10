@@ -41,7 +41,7 @@ void *mini_shell(void *param)
 	int inputSize, i;
 	int threadNum;
 	char buff[128];		// Character buffer
-
+	printf("reached shell efore while");
 	while(1)
 	{
 		// Request a line of input
