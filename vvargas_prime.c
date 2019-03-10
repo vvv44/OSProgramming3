@@ -17,7 +17,7 @@ int	numThreads;
 
 /*Declare file names variable*/
 FILE *primesFile; //file to write the primes to
-char *fileName[];
+char *fileName[2];
 void *prime_search(void *param)
 {
 	printf("reached this");
