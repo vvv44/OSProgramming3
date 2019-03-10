@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
   /* Setup threads to find prime numbers */
   pthread_attr_init(&attr);
   numThreads = 2;
-#if 0
+
   /*We need to fill the info for the array of structs*/
   /*First we will get it from the two arguments, argv[1] is the low and argv[2] is the high*/
   /*Right away we can set the low of first thread and high of second and their thread numbers*/
@@ -50,12 +50,13 @@ int main(int argc, char *argv[])
 
   //FIXME: problems seems to be with the parameters
   /*Create threads that will do the prime search*/
-  pthread_create(&tid[0],&attr,prime_search,&primeThreadData[0]);//thread 1
-  pthread_create(&tid[1],&attr,prime_search,&primeThreadData[1]);//thread 2
-#endif
+  //pthread_create(&tid[0],&attr,prime_search,&primeThreadData[0]);//thread 1
+  //pthread_create(&tid[1],&attr,prime_search,&primeThreadData[1]);//thread 2
+
   /* Setup a mini shell thread to provide interactivity with the user */
   pthread_create(&tidshell,&attr,mini_shell,NULL);
 
+#if 0
   /* Create primes output file */
   primeFile = fopen("primest","w");
   fclose(primeFile);
@@ -96,7 +97,7 @@ int main(int argc, char *argv[])
   /* Record execution time */
   after = time(NULL);
   printf("\nPrime search done after %ld seconds\n", after-before);
-
+#endif
   sleep(20);
   
   /* Lastly, kill the interaction thread */
