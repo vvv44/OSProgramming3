@@ -22,10 +22,10 @@ char *fileName[2];
 
 void *prime_search(void *param)
 {
-	#if 0
+	
 	/*We will receive an sPRIME_THREAD structure as argument, from there we will get our values*/
 	sprintf(fileName[(((sPRIME_THREAD *)param)->num)-1], "primes%d", ((sPRIME_THREAD *)param)->num);	
-
+	#if 0
 	/* Create primes output file */
   	primesFile = fopen(fileName[(((sPRIME_THREAD *)param)->num)-1],"w");
 	for(int i=((sPRIME_THREAD *)param)->low;i<=((sPRIME_THREAD *)param)->high;i++){
