@@ -21,7 +21,6 @@ FILE *primesFile; //file to write the primes to
 char *fileName[2];
 void *prime_search(void *param)
 {
-	printf("reached this");
 	/*We will receive an sPRIME_THREAD structure as argument, from there we will get our values*/
 	sprintf(fileName[(((sPRIME_THREAD *)param)->num)-1], "primes%d", ((sPRIME_THREAD *)param)->num);	
 
@@ -41,7 +40,6 @@ void *mini_shell(void *param)
 	int inputSize, i;
 	int threadNum;
 	char buff[128];		// Character buffer
-	printf("reached shell efore while");
 	while(1)
 	{
 		// Request a line of input
@@ -50,7 +48,6 @@ void *mini_shell(void *param)
 		inputSize = read(0, buff, 128);
 		// Strip off carriage return
 		buff[inputSize-1] = '\0';
-		printf("reached shell efore if");
 		if((buff[0] >= '1') && (buff[0] <= '9'))
 		{
 			// An integer was entered
