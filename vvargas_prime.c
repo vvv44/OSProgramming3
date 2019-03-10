@@ -20,7 +20,7 @@ FILE *primesFile; //file to write the primes to
 char *fileName;
 void *prime_search(void *param)
 {
-	printf("reached this")
+	printf("reached this");
 	/*We will receive an sPRIME_THREAD structure as argument, from there we will get our values*/
 	sprintf(fileName, "primes%d", ((sPRIME_THREAD *)param)->num);	
 
