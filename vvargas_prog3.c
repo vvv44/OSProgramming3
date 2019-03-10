@@ -34,7 +34,6 @@ int main(int argc, char *argv[])
   /* Setup threads to find prime numbers */
   pthread_attr_init(&attr);
   numThreads = 2;
-  printf("did not achieve anything");
   /*We need to fill the info for the array of structs*/
   /*First we will get it from the two arguments, argv[1] is the low and argv[2] is the high*/
   /*Right away we can set the low of first thread and high of second and their thread numbers*/
@@ -42,20 +41,16 @@ int main(int argc, char *argv[])
   primeThreadData[1].high = atoi(argv[2]);
   primeThreadData[0].num = 1;
   primeThreadData[1].num = 2;
-  
-  printf("Did not get range");
 
   /*Now we need to compute the missing high and low, to achieve a good balance*/
   //FIXME: We will leave it at 50/50 for now
   int range = primeThreadData[1].high-primeThreadData[0].low;
   primeThreadData[0].high = range/2;
   primeThreadData[1].low = range/2+1;
-  printf("Did not create threads");
   /*Create threads that will do the prime search*/
   pthread_create(&tid[0],&attr,prime_search,&primeThreadData[0]);//thread 1
   pthread_create(&tid[1],&attr,prime_search,&primeThreadData[1]);//thread 2
 
-  printf("What is going on guys");
   /* Setup a mini shell thread to provide interactivity with the user */
   pthread_create(&tidshell,&attr,mini_shell,NULL);
   
