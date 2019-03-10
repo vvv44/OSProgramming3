@@ -21,6 +21,7 @@ FILE *primeThreadFile;
 
 int main(int argc, char *argv[])
 {
+  printf("What is going on guys");
   int i, bytesRead, bytesWritten;
   pthread_t tid[MAX_THREADS]; 
   pthread_t tidshell;
