@@ -50,7 +50,7 @@ void *mini_shell(void *param)
 		inputSize = read(0, buff, 128);
 		// Strip off carriage return
 		buff[inputSize-1] = '\0';
-		
+		printf("reached shell efore if");
 		if((buff[0] >= '1') && (buff[0] <= '9'))
 		{
 			// An integer was entered
