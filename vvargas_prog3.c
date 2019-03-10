@@ -22,7 +22,7 @@ FILE *primeThreadFile;
 int main(int argc, char *argv[])
 {
   int i, bytesRead, bytesWritten;
-  pthread_t tid[MAX_THREADS] = (pthread_t*) malloc(MAX_THREADS * sizeof(pthread_t));//allocate memory for threads id 
+  pthread_t tid[MAX_THREADS];
   pthread_t tidshell;
   pthread_attr_t attr;
   time_t before, after;

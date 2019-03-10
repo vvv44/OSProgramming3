@@ -13,7 +13,7 @@
 #include <math.h> //for square root function
 
 /* Global variables that are shared */
-sPRIME_THREAD *primeThreadData = (sPRIME_THREAD*) malloc(MAX_THREADS * sizeof(sPRIME_THREAD)); //allocate memory for structs
+sPRIME_THREAD primeThreadData[MAX_THREADS];
 int	numThreads;
 
 /*Declare file names variable*/
