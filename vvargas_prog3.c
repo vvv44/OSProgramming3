@@ -58,13 +58,17 @@ int main(int argc, char *argv[])
   /* Create primes output file */
   primeFile = fopen("primest","w");
   fclose(primeFile);
-
+  int res = 0;//respnse from  pthread join
   /* Wait for the prime search threads to complete and combine their data */
   for(i = 0; i < numThreads; i++)
   {
     printf("before join");
   	/* Wait for the next thread to complete */
-  	pthread_join(tid[i],NULL);
+  	res = pthread_join(tid[i],NULL);
+    (if res!=0){//error
+      printf("Errorsillo");
+      break;
+    }
   	/* On thread completion, write its data to "primest" */
     printf("join succesful");
     fileName[0] = '\0';
