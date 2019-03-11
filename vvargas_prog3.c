@@ -62,6 +62,7 @@ int main(int argc, char *argv[])
   /* Wait for the prime search threads to complete and combine their data */
   for(i = 0; i < numThreads; i++)
   {
+    printf("before join");
   	/* Wait for the next thread to complete */
   	pthread_join(tid[i],NULL);
   	/* On thread completion, write its data to "primest" */
