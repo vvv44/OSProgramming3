@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
   	/* Wait for the next thread to complete */
   	res = pthread_join(tid[i],NULL);
     if (res!=0){//error
-      printf("Errorsillo");
+      printf("Error in joining");
       break;
     }
   	/* On thread completion, write its data to "primest" */
