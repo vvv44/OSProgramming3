@@ -62,7 +62,6 @@ int main(int argc, char *argv[])
   /* Wait for the prime search threads to complete and combine their data */
   for(i = 0; i < numThreads; i++)
   {
-    printf("before join");
   	/* Wait for the next thread to complete */
   	res = pthread_join(tid[i],NULL);
     if (res!=0){//error
@@ -70,7 +69,6 @@ int main(int argc, char *argv[])
       break;
     }
   	/* On thread completion, write its data to "primest" */
-    printf("join succesful");
     fileName[0] = '\0';
     sprintf(fileName, "primes%d", i+1);					// Open the thread's data file
     if((primeThreadFile = fopen(fileName,"r")) == NULL)
