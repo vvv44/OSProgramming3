@@ -98,7 +98,7 @@ int main(int argc, char *argv[])
   after = time(NULL);
   printf("\nPrime search done after %ld seconds\n", after-before);
 
-  sleep(20);
+  sleep(10);
   
   /* Lastly, kill the interaction thread */
   pthread_kill(tidshell, SIGKILL);
