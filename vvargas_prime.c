@@ -36,6 +36,7 @@ void *prime_search(void *param)
 	fclose(primesFile);//close the file
 }
 
+
 void *mini_shell(void *param)
 {
 	int inputSize, i;

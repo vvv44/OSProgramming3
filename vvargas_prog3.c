@@ -48,7 +48,6 @@ int main(int argc, char *argv[])
   primeThreadData[0].high = range/2;
   primeThreadData[1].low = range/2+1;
 
-  //FIXME: problems seems to be with the parameters
   /*Create threads that will do the prime search*/
   pthread_create(&tid[0],&attr,prime_search,&primeThreadData[0]);//thread 1
   pthread_create(&tid[1],&attr,prime_search,&primeThreadData[1]);//thread 2
@@ -66,6 +65,7 @@ int main(int argc, char *argv[])
   	/* Wait for the next thread to complete */
   	pthread_join(tid[i],NULL);
   	/* On thread completion, write its data to "primest" */
+    printf("join succesful");
     fileName[0] = '\0';
     sprintf(fileName, "primes%d", i+1);					// Open the thread's data file
     if((primeThreadFile = fopen(fileName,"r")) == NULL)
@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
     	else
     	{
     		while(feof(primeThreadFile) == 0)
-			{
+			  {
 				/* Read from the thread's data file */
 				bytesRead = fread(buffer,1,BUFFER_SIZE,primeThreadFile);
 				/* Write to the combined file */
