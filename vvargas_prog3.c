@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
     printf("before join");
   	/* Wait for the next thread to complete */
   	res = pthread_join(tid[i],NULL);
-    (if res!=0){//error
+    if (res!=0){//error
       printf("Errorsillo");
       break;
     }
