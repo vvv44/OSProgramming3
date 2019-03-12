@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
   primeThreadData[1].num = 2;
 
   /*Now we need to compute the missing high and low, to achieve a good balance*/
-  /*We will do 2/3 for the first one and the remaining third for the second thread*/
+  /*We will do 3/5 for the first one and the remaining  for the second thread*/
   int range = primeThreadData[1].high-primeThreadData[0].low;
   primeThreadData[0].high = (range/5)*3;
   primeThreadData[1].low = primeThreadData[0].high +1;
