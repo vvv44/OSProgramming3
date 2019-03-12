@@ -11,6 +11,6 @@ vvargas_prime.o: vvargas_prime.c vvargas_prime.h
 
 clean:
 	rm *.o; rm primest primes1 primes2 program
-
+#clean only files created so they may not interfere if you want to run program again.
 clean_files:
 	rm primest primes1 primes2 

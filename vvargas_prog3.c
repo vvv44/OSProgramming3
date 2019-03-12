@@ -1,6 +1,6 @@
 // UT El Paso EE 4374 Assignment 3
 // Multi-threaded Prime Number Search
-// Author: ???
+// Author: Victor Vargas
 //
 #include <pthread.h>
 #include <stdlib.h>
