@@ -43,10 +43,10 @@ int main(int argc, char *argv[])
   primeThreadData[1].num = 2;
 
   /*Now we need to compute the missing high and low, to achieve a good balance*/
-  //FIXME: We will leave it at 50/50 for now
+  /*We will do 2/3 for the first one and the remaining third for the second thread*/
   int range = primeThreadData[1].high-primeThreadData[0].low;
-  primeThreadData[0].high = range/2;
-  primeThreadData[1].low = range/2+1;
+  primeThreadData[0].high = (range/3)*2;
+  primeThreadData[1].low = primeThreadData[0].high +1;
 
   /*Create threads that will do the prime search*/
   pthread_create(&tid[0],&attr,prime_search,&primeThreadData[0]);//thread 1
